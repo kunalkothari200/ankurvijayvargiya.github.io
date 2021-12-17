@@ -753,6 +753,7 @@
                 <br />
                  Re-Design by : Ankur Vijayvargiya               
               </p>
+		<p><i>VISITORS  </i><br><p id=count >Visitors</p></p>
             </div>
           </div>
         </div>
@@ -779,5 +780,16 @@
     <script src="assets/js/styleSwitcher.js"></script>
     <!--  CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
+	<script>
+      const countEl = document.getElementById('count');
+        updateCount();
+      function updateCount(){
+        fetch('https://api.countapi.xyz/update/ankurvijayvargiya.tech/9899/?amount=1') 
+        .then(res => res.json())
+        .then(res => {
+          countEl.innerHTML = res.value;
+        });
+      }
+    </script>
   </body>
 </html>
